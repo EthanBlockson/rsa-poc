@@ -1,4 +1,6 @@
-# Proof of Concept, Guide
+# RSA encryption guide
+
+Proof of concept how to secure your messaging with RSA encryption. Using default Mac OS systems console terminal.
 
 ## Create user A
 
