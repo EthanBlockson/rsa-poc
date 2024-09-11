@@ -22,7 +22,7 @@ Generate public key from this private key
 
 `openssl rsa -pubout -in ~/Desktop/private_key_user_B.pem -out ~/Desktop/public_key_user_B.pem`
 
-## Sign the message for user B
+## Encrypt the message for user B
 
 `openssl pkeyutl -encrypt -in ~/Desktop/message.txt -out ~/Desktop/encrypted_message.bin -inkey ~/Desktop/public_key_user_B.pem -pubin`
 
