@@ -20,10 +20,10 @@ Generate public key from this private key
 
 `openssl rsa -pubout -in ~/Desktop/private_key_user_B.pem -out ~/Desktop/public_key_user_B.pem`
 
-## Sign the message on device of user A
+## Sign the message with private key of user A for user B
 
 `openssl pkeyutl -encrypt -in ~/Desktop/message.txt -out ~/Desktop/encrypted_message.bin -inkey ~/Desktop/public_key_user_B.pem -pubin`
 
-## Receive the message with pkey of user B
+## Receive the message from user A with public key of user B
 
 `openssl pkeyutl -decrypt -in ~/Desktop/encrypted_message.bin -out ~/Desktop/decrypted_message.txt -inkey ~/Desktop/private_key_user_B.pem`
