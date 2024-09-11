@@ -1,0 +1,29 @@
+# Proof of Concept, Guide
+
+## Create user A
+
+Generate private key with custom path
+
+`openssl genpkey -algorithm RSA -out ~/Desktop/private_key_user_A.pem -pkeyopt rsa_keygen_bits:4096`
+
+Generate public key from this private key
+
+`openssl rsa -pubout -in ~/Desktop/private_key_user_A.pem -out ~/Desktop/public_key_user_A.pem`
+
+## Create user B
+
+Generate private key with custom path
+
+`openssl genpkey -algorithm RSA -out ~/Desktop/private_key_user_B.pem -pkeyopt rsa_keygen_bits:4096`
+
+Generate public key from this private key
+
+`openssl rsa -pubout -in ~/Desktop/private_key_user_B.pem -out ~/Desktop/public_key_user_B.pem`
+
+## Sign the message on device of user A
+
+`openssl pkeyutl -encrypt -in ~/Desktop/message.txt -out ~/Desktop/encrypted_message.bin -inkey ~/Desktop/public_key_user_B.pem -pubin`
+
+## Receive the message with pkey of user B
+
+`openssl pkeyutl -decrypt -in ~/Desktop/encrypted_message.bin -out ~/Desktop/decrypted_message.txt -inkey ~/Desktop/private_key_user_B.pem`
