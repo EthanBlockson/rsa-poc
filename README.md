@@ -6,7 +6,9 @@ Proof of concept how to secure your messaging with RSA encryption. Using default
 
 Generate private key with custom path
 
-`openssl genpkey -algorithm RSA -out ~/Desktop/public_key.pem -pkeyopt rsa_keygen_bits:4096`
+```bash
+openssl genpkey -algorithm RSA -out ~/Desktop/public_key.pem -pkeyopt rsa_keygen_bits:4096
+```
 
 Generate public key from this private key
 
