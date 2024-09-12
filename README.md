@@ -7,19 +7,20 @@ Proof of concept how to secure your messaging with RSA encryption. Using default
 Generate private key with custom path
 
 ```bash
-openssl genpkey -algorithm RSA -out ~/Desktop/public_key.pem -pkeyopt rsa_keygen_bits:4096
+openssl genpkey -algorithm RSA -out ~/Desktop/private_key_user_A.pem -pkeyopt rsa_keygen_bits:4096
 ```
 
 Generate public key from this private key
 
 ```bash
-openssl rsa -pubout -in ~/Desktop/private_key.pem -out ~/Desktop/public_key.pem
+openssl rsa -pubout -in ~/Desktop/private_key_user_A.pem -out ~/Desktop/public_key_user_A.pem
 ```
 
 To view them
 ```bash
 cat private_key_user_A.pem
 ```
+
 ```bash
 cat public_key_user_A.pem
 ```
@@ -40,8 +41,9 @@ openssl rsa -pubout -in ~/Desktop/private_key_user_B.pem -out ~/Desktop/public_k
 
 To view them
 ```bash
-private_key_user_B.pem
+cat private_key_user_B.pem
 ```
+
 ```bash
 cat public_key_user_B.pem
 ```
